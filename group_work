@@ -1,1 +1,1 @@
-test_file
+print("hello world")
