@@ -30,26 +30,25 @@ tes_of_pokemon = {1: 'Grass',
                     }
 
 def average_stats_calculate(pokemon):
-    with open (r"E:\1850\课业\1.5\pokemon.csv","r", encoding='utf-8') as infile:
+    with open ("pokemon.csv","r") as infile:
         lines = infile.readlines()[1:]
         empty_list = []
         list = []
         counter = 0
-        for line in lines:
-            split = line.strip().split(",")
-            type_1 = split[2]
-            type_2 = split[3]
-            split[4] = int(split[4])
-
-            for i in range(1,18):
+        for i in range(1,18):
+            for line in lines:
+                split = line.strip().split(",")
+                type_1 = split[2]
+                type_2 = split[3]
+                split[4] = int(split[4])
                 if type_1 == tes_of_pokemon[i] or type_2 == tes_of_pokemon[i]:
                     empty_list.append(split[4])
-                #elif type_2 == tes_of_pokemon[i]:
-                    #empty_list.append(split[4])
-                #if type_1 == tes_of_pokemon[i] or type_2 == tes_of_pokemon[i]:
                     counter += 1
                 total_data = sum(empty_list) / counter
             list.append(total_data)
     return list
+
 pokemon = input('test: ')
 print(average_stats_calculate(pokemon))
+
+#finally it works, this module givs exactlly 17 data outputs in a list and the data looks meaningful
