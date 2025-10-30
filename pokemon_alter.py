@@ -31,6 +31,38 @@ def pokemon_load(pokemon):
 pokemon = input("What pokemon do you want to load: ").title()
 print(pokemon_load(pokemon))
 
+
+# dictionary of data types:
+all_data_types = {1: 'Total',
+                  2: 'HP',
+                  3: 'Attack',
+                  4: 'Defense',
+                  5: 'Sp. Atk',
+                  6: 'Sp. Def',
+                  7: 'Speed',
+                  8: 'Generation',
+                  9: 'Legendary'}
+
+# dictionary of types of pokemon
+tes_of_pokemon = {1: 'Grass',
+                    2: 'Fire',
+                    3: 'Water',
+                    4: 'Bug',
+                    5: 'Normal',
+                    6: 'Poison',
+                    7: 'Electric',
+                    8: 'Ground',
+                    9: 'Fairy',
+                    10: 'Fighting',
+                    11: 'Psychic',
+                    12: 'Rock',
+                    13: 'Ghost',
+                    14: 'Dragon',
+                    15: 'Dark',
+                    16: 'Ice',
+                    17: 'Steel'
+                    }
+
 #data_display module
 def data_display(pokemon):
     with open ("pokemon.csv","r") as infile:
