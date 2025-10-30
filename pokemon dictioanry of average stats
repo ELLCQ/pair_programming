@@ -1,0 +1,81 @@
+tes_of_pokemon = {1: 'Grass',
+                    2: 'Fire',
+                    3: 'Water',
+                    4: 'Bug',
+                    5: 'Normal',
+                    6: 'Poison',
+                    7: 'Electric',
+                    8: 'Ground',
+                    9: 'Fairy',
+                    10: 'Fighting',
+                    11: 'Psychic',
+                    12: 'Rock',
+                    13: 'Ghost',
+                    14: 'Dragon',
+                    15: 'Dark',
+                    16: 'Ice',
+                    17: 'Steel'
+                    }
+
+list_type = ['Grass','Fire', 'Water', 'Bug', 'Normal', 'Poison', 'Electric', 'Ground', 'Fairy', 'Fighting', 'Psychic', 'Rock', 'Ghost', 'Dragon', 'Dark', 'Ice', 'Steel']
+
+def average_stats_calculate():
+    with open ("pokemon.csv","r") as infile:
+        lines = infile.readlines()[1:]
+        empty_list = []
+        empty_list2 = []
+        typeused = []
+        count = 0
+        count2 = 0
+        result = 0
+        result2 = 0
+        value = 0
+        no = 0
+        types = {}
+        types2 = {}
+        types3 = {}
+        for line in lines:
+            split = line.strip().split(",")
+            type_1 = split[2]
+            type_2 = split[3]
+            tot = int(split[4])
+            hp = int(split[5])
+            for i in range(1,18):
+                if tes_of_pokemon[i] in types:
+                    if type_1 == tes_of_pokemon[i]:
+                        count = count + 1
+                        empty_list.append(tot)
+                        result = sum(empty_list)
+                        types[tes_of_pokemon[i]] =  types[tes_of_pokemon[i]] + 1
+                        types2[tes_of_pokemon[i]] =  types2[tes_of_pokemon[i]] + tot
+                        no = types[tes_of_pokemon[i]]
+                        avg = types2[tes_of_pokemon[i]] / no
+                        types3[tes_of_pokemon[i]] = round(avg)
+                    elif type_2 == tes_of_pokemon[i]:
+                        count2 = count2 + 1
+                        empty_list2.append(tot)
+                        result2 = sum(empty_list2)
+                        types[tes_of_pokemon[i]] =  types[tes_of_pokemon[i]] + 1
+                        types2[tes_of_pokemon[i]] =  types2[tes_of_pokemon[i]] + tot
+                        no = types[tes_of_pokemon[i]]
+                        avg = types2[tes_of_pokemon[i]] / no
+                        types3[tes_of_pokemon[i]] = round(avg)
+                else:
+                    types[type_1] = 0
+                    types2[type_1] = 0
+                    types3[type_1] = 0
+        print(types)
+        print(types2)
+        print(types3)
+
+        if count > 0:
+            avtot = result / count
+            ravtot = round(avtot)
+            print(ravtot)
+            avtot2 = result2 / count2
+            ravtot2 = round(avtot2)
+            print(ravtot2)
+
+        return result
+
+print(average_stats_calculate())
