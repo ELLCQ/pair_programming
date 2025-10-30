@@ -34,14 +34,20 @@ print(pokemon_load(pokemon))
 #data_display module
 def data_display(pokemon):
     with open ("pokemon.csv","r") as infile:
-        
         lines = infile.readlines()[1:]
+        #found_mark = False
         for line in lines:
             split = line.strip().split(",")
-            for counter in split:
-                counter = 4
-                datas = []
-                datas = datas.append(split[counter])
-                counter += 1
+            name = split[1]
+            if pokemon == name:
+                #found_mark = True
+                #print(line)
+                datas = split[4:]
+                '''
+                counter = 1
+                for i in split[4:]:
+                    datas = [f'{d[counter]}:{i}']
+                # it's possible to pair up each data with the type
+                '''
                 return datas
 print(data_display(pokemon))
