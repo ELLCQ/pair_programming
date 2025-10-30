@@ -1,0 +1,51 @@
+tes_of_pokemon = {1: 'Grass',
+                    2: 'Fire',
+                    3: 'Water',
+                    4: 'Bug',
+                    5: 'Normal',
+                    6: 'Poison',
+                    7: 'Electric',
+                    8: 'Ground',
+                    9: 'Fairy',
+                    10: 'Fighting',
+                    11: 'Psychic',
+                    12: 'Rock',
+                    13: 'Ghost',
+                    14: 'Dragon',
+                    15: 'Dark',
+                    16: 'Ice',
+                    17: 'Steel'
+                    }
+
+list_type = ['Grass','Fire', 'Water', 'Bug', 'Normal', 'Poison', 'Electric', 'Ground', 'Fairy', 'Fighting', 'Psychic', 'Rock', 'Ghost', 'Dragon', 'Dark', 'Ice', 'Steel']
+
+def average_stats_calculate(pokemon,typea):
+    with open ("pokemon.csv","r") as infile:
+        lines = infile.readlines()[1:]
+        empty_list = []
+        count = 0
+        result = 0
+        for line in lines:
+            split = line.strip().split(",")
+            type_1 = split[2]
+            type_2 = split[3]
+            split[4] = int(split[4])
+            for i in tes_of_pokemon:
+                if type_1 == typea:
+                    count = count + 1
+                    empty_list.append(split[4])
+                    result = sum(empty_list)
+                    print(count)
+                elif type_2 == typea:
+                    count = count + 1
+                    empty_list.append(split[4])
+                    result = sum(empty_list)
+                    print(count)
+                    #print(empty_list)
+                if count > 0:
+                    avtot = result / count
+                    print(avtot)
+        return result
+pokemon = input('test: ').title()
+typea = input('type: ').title()
+print(average_stats_calculate(pokemon, typea))
