@@ -19,33 +19,40 @@ tes_of_pokemon = {1: 'Grass',
 
 list_type = ['Grass','Fire', 'Water', 'Bug', 'Normal', 'Poison', 'Electric', 'Ground', 'Fairy', 'Fighting', 'Psychic', 'Rock', 'Ghost', 'Dragon', 'Dark', 'Ice', 'Steel']
 
-def average_stats_calculate(pokemon,typea):
+def average_stats_calculate(pokemon, typeinput):
     with open ("pokemon.csv","r") as infile:
         lines = infile.readlines()[1:]
         empty_list = []
+        typeused = []
         count = 0
         result = 0
         for line in lines:
             split = line.strip().split(",")
             type_1 = split[2]
             type_2 = split[3]
-            split[4] = int(split[4])
+            tot = int(split[4])
+            hp = int(split[5])
             for i in tes_of_pokemon:
-                if type_1 == typea:
-                    count = count + 1
-                    empty_list.append(split[4])
-                    result = sum(empty_list)
-                    print(count)
-                elif type_2 == typea:
-                    count = count + 1
-                    empty_list.append(split[4])
-                    result = sum(empty_list)
-                    print(count)
-                    #print(empty_list)
-                if count > 0:
-                    avtot = result / count
-                    print(avtot)
+                if tes_of_pokemon[i] == typeinput:
+                    if type_1 == tes_of_pokemon[i]:
+                        count = count + 1
+                        typeused.append(tes_of_pokemon[i])
+                        empty_list.append(tot)
+                        result = sum(empty_list)
+                        #print(count)
+                    elif type_2 == tes_of_pokemon[i]:
+                        count = count + 1
+                        typeused.append(tes_of_pokemon[i])
+                        empty_list.append(tot)
+                        result = sum(empty_list)
+                        #print(count)
+                        #print(empty_list)
+        if count > 0:
+            avtot = result / count
+            ravtot = round(avtot)
+            print(f'The average total stats of {typeinput} is {ravtot}')
         return result
 pokemon = input('test: ').title()
-typea = input('type: ').title()
-print(average_stats_calculate(pokemon, typea))
+typeinput = input('type: ').title()
+print(average_stats_calculate(pokemon, typeinput))
+
