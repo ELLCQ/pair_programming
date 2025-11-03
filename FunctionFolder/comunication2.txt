@@ -1,1 +1,3 @@
 #Started new functions that are needed for the project
+
+*you better share your idea before create 4 new code, that's a dramatic change and I won't promise the module I write can fit your code as all of my work based on pokemon_alter.py
