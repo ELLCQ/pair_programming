@@ -1,0 +1,183 @@
+# dictionary of data types:
+all_data_types = {1: 'Total',
+                  2: 'HP',
+                  3: 'Attack',
+                  4: 'Defense',
+                  5: 'Sp. Atk',
+                  6: 'Sp. Def',
+                  7: 'Speed',
+                  8: 'Generation',
+                  9: 'Legendary'}
+
+# dictionary of types of pokemon
+tes_of_pokemon = {1: 'Grass',
+                    2: 'Fire',
+                    3: 'Water',
+                    4: 'Bug',
+                    5: 'Normal',
+                    6: 'Poison',
+                    7: 'Electric',
+                    8: 'Ground',
+                    9: 'Fairy',
+                    10: 'Fighting',
+                    11: 'Psychic',
+                    12: 'Rock',
+                    13: 'Ghost',
+                    14: 'Dragon',
+                    15: 'Dark',
+                    16: 'Ice',
+                    17: 'Steel'
+                    }
+
+pokemon = input('test: ')# this input can be ignored when connect to other modulus
+
+def average_stats_calculate(pokemon):
+    with open (r"E:\1850\课业\1.5\pokemon.csv","r", encoding='utf-8') as infile:
+        lines = infile.readlines()[1:]
+        empty_list = []
+        list = []
+        counter = 0
+        for i in range(1,18):
+            for line in lines:
+                split = line.strip().split(",")
+                type_1 = split[2]
+                type_2 = split[3]
+                split[4] = int(split[4])
+                if type_1 == tes_of_pokemon[i] or type_2 == tes_of_pokemon[i]:
+                    empty_list.append(split[4])
+                    counter += 1
+                total_data = round(sum(empty_list) / counter)
+            list.append(total_data)
+    return list
+
+print(f'Pokemon type: {tes_of_pokemon[1]:<7}{tes_of_pokemon[2]:<6}{tes_of_pokemon[3]:<7}{tes_of_pokemon[4]:<5}{tes_of_pokemon[5]:<8}{tes_of_pokemon[6]:<8}{tes_of_pokemon[7]:<10}{tes_of_pokemon[8]:<8}{tes_of_pokemon[9]:<7}{tes_of_pokemon[10]:<10}{tes_of_pokemon[11]:<9}{tes_of_pokemon[12]:<6}{tes_of_pokemon[13]:<7}{tes_of_pokemon[14]:<8}{tes_of_pokemon[15]:<6}{tes_of_pokemon[16]:<5}{tes_of_pokemon[17]}')
+#print(tes_of_pokemon[1], tes_of_pokemon[2], tes_of_pokemon[3], tes_of_pokemon[4], tes_of_pokemon[5], tes_of_pokemon[6], tes_of_pokemon[7], tes_of_pokemon[8], tes_of_pokemon[9], tes_of_pokemon[10], tes_of_pokemon[11], tes_of_pokemon[12], tes_of_pokemon[13], tes_of_pokemon[14], tes_of_pokemon[15], tes_of_pokemon[16], tes_of_pokemon[17])
+print(f'\nTotal         {average_stats_calculate(pokemon)[0]:<7}{average_stats_calculate(pokemon)[1]:<6}{average_stats_calculate(pokemon)[2]:<7}{average_stats_calculate(pokemon)[3]:<5}{average_stats_calculate(pokemon)[4]:<8}{average_stats_calculate(pokemon)[5]:<8}{average_stats_calculate(pokemon)[6]:<10}{average_stats_calculate(pokemon)[7]:<8}{average_stats_calculate(pokemon)[8]:<7}{average_stats_calculate(pokemon)[9]:<10}{average_stats_calculate(pokemon)[10]:<9}{average_stats_calculate(pokemon)[11]:<6}{average_stats_calculate(pokemon)[12]:<7}{average_stats_calculate(pokemon)[13]:<8}{average_stats_calculate(pokemon)[14]:<6}{average_stats_calculate(pokemon)[15]:<5}{average_stats_calculate(pokemon)[16]}')
+#alter_list = ' '.join(map(str, average_stats_calculate(pokemon)))
+#print(alter_list)
+
+def average_stats_calculate(pokemon):
+    with open (r"E:\1850\课业\1.5\pokemon.csv","r", encoding='utf-8') as infile:
+        lines = infile.readlines()[1:]
+        empty_list = []
+        list = []
+        counter = 0
+        for i in range(1,18):
+            for line in lines:
+                split = line.strip().split(",")
+                type_1 = split[2]
+                type_2 = split[3]
+                split[5] = int(split[5])
+                if type_1 == tes_of_pokemon[i] or type_2 == tes_of_pokemon[i]:
+                    empty_list.append(split[5])
+                    counter += 1
+                total_data = round(sum(empty_list) / counter)
+            list.append(total_data)
+    return list
+
+print(f'HP            {average_stats_calculate(pokemon)[0]:<7}{average_stats_calculate(pokemon)[1]:<6}{average_stats_calculate(pokemon)[2]:<7}{average_stats_calculate(pokemon)[3]:<5}{average_stats_calculate(pokemon)[4]:<8}{average_stats_calculate(pokemon)[5]:<8}{average_stats_calculate(pokemon)[6]:<10}{average_stats_calculate(pokemon)[7]:<8}{average_stats_calculate(pokemon)[8]:<7}{average_stats_calculate(pokemon)[9]:<10}{average_stats_calculate(pokemon)[10]:<9}{average_stats_calculate(pokemon)[11]:<6}{average_stats_calculate(pokemon)[12]:<7}{average_stats_calculate(pokemon)[13]:<8}{average_stats_calculate(pokemon)[14]:<6}{average_stats_calculate(pokemon)[15]:<5}{average_stats_calculate(pokemon)[16]}')
+
+def average_stats_calculate(pokemon):
+    with open (r"E:\1850\课业\1.5\pokemon.csv","r", encoding='utf-8') as infile:
+        lines = infile.readlines()[1:]
+        empty_list = []
+        list = []
+        counter = 0
+        for i in range(1,18):
+            for line in lines:
+                split = line.strip().split(",")
+                type_1 = split[2]
+                type_2 = split[3]
+                split[6] = int(split[6])
+                if type_1 == tes_of_pokemon[i] or type_2 == tes_of_pokemon[i]:
+                    empty_list.append(split[6])
+                    counter += 1
+                total_data = round(sum(empty_list) / counter)
+            list.append(total_data)
+    return list
+
+print(f'Attack        {average_stats_calculate(pokemon)[0]:<7}{average_stats_calculate(pokemon)[1]:<6}{average_stats_calculate(pokemon)[2]:<7}{average_stats_calculate(pokemon)[3]:<5}{average_stats_calculate(pokemon)[4]:<8}{average_stats_calculate(pokemon)[5]:<8}{average_stats_calculate(pokemon)[6]:<10}{average_stats_calculate(pokemon)[7]:<8}{average_stats_calculate(pokemon)[8]:<7}{average_stats_calculate(pokemon)[9]:<10}{average_stats_calculate(pokemon)[10]:<9}{average_stats_calculate(pokemon)[11]:<6}{average_stats_calculate(pokemon)[12]:<7}{average_stats_calculate(pokemon)[13]:<8}{average_stats_calculate(pokemon)[14]:<6}{average_stats_calculate(pokemon)[15]:<5}{average_stats_calculate(pokemon)[16]}')
+
+def average_stats_calculate(pokemon):
+    with open (r"E:\1850\课业\1.5\pokemon.csv","r", encoding='utf-8') as infile:
+        lines = infile.readlines()[1:]
+        empty_list = []
+        list = []
+        counter = 0
+        for i in range(1,18):
+            for line in lines:
+                split = line.strip().split(",")
+                type_1 = split[2]
+                type_2 = split[3]
+                split[7] = int(split[7])
+                if type_1 == tes_of_pokemon[i] or type_2 == tes_of_pokemon[i]:
+                    empty_list.append(split[7])
+                    counter += 1
+                total_data = round(sum(empty_list) / counter)
+            list.append(total_data)
+    return list
+
+print(f'Defence       {average_stats_calculate(pokemon)[0]:<7}{average_stats_calculate(pokemon)[1]:<6}{average_stats_calculate(pokemon)[2]:<7}{average_stats_calculate(pokemon)[3]:<5}{average_stats_calculate(pokemon)[4]:<8}{average_stats_calculate(pokemon)[5]:<8}{average_stats_calculate(pokemon)[6]:<10}{average_stats_calculate(pokemon)[7]:<8}{average_stats_calculate(pokemon)[8]:<7}{average_stats_calculate(pokemon)[9]:<10}{average_stats_calculate(pokemon)[10]:<9}{average_stats_calculate(pokemon)[11]:<6}{average_stats_calculate(pokemon)[12]:<7}{average_stats_calculate(pokemon)[13]:<8}{average_stats_calculate(pokemon)[14]:<6}{average_stats_calculate(pokemon)[15]:<5}{average_stats_calculate(pokemon)[16]}')
+
+def average_stats_calculate(pokemon):
+    with open (r"E:\1850\课业\1.5\pokemon.csv","r", encoding='utf-8') as infile:
+        lines = infile.readlines()[1:]
+        empty_list = []
+        list = []
+        counter = 0
+        for i in range(1,18):
+            for line in lines:
+                split = line.strip().split(",")
+                type_1 = split[2]
+                type_2 = split[3]
+                split[8] = int(split[8])
+                if type_1 == tes_of_pokemon[i] or type_2 == tes_of_pokemon[i]:
+                    empty_list.append(split[8])
+                    counter += 1
+                total_data = round(sum(empty_list) / counter)
+            list.append(total_data)
+    return list
+
+print(f'Sp.Atk        {average_stats_calculate(pokemon)[0]:<7}{average_stats_calculate(pokemon)[1]:<6}{average_stats_calculate(pokemon)[2]:<7}{average_stats_calculate(pokemon)[3]:<5}{average_stats_calculate(pokemon)[4]:<8}{average_stats_calculate(pokemon)[5]:<8}{average_stats_calculate(pokemon)[6]:<10}{average_stats_calculate(pokemon)[7]:<8}{average_stats_calculate(pokemon)[8]:<7}{average_stats_calculate(pokemon)[9]:<10}{average_stats_calculate(pokemon)[10]:<9}{average_stats_calculate(pokemon)[11]:<6}{average_stats_calculate(pokemon)[12]:<7}{average_stats_calculate(pokemon)[13]:<8}{average_stats_calculate(pokemon)[14]:<6}{average_stats_calculate(pokemon)[15]:<5}{average_stats_calculate(pokemon)[16]}')
+
+def average_stats_calculate(pokemon):
+    with open (r"E:\1850\课业\1.5\pokemon.csv","r", encoding='utf-8') as infile:
+        lines = infile.readlines()[1:]
+        empty_list = []
+        list = []
+        counter = 0
+        for i in range(1,18):
+            for line in lines:
+                split = line.strip().split(",")
+                type_1 = split[2]
+                type_2 = split[3]
+                split[9] = int(split[9])
+                if type_1 == tes_of_pokemon[i] or type_2 == tes_of_pokemon[i]:
+                    empty_list.append(split[9])
+                    counter += 1
+                total_data = round(sum(empty_list) / counter)
+            list.append(total_data)
+    return list
+
+print(f'Sp.Def        {average_stats_calculate(pokemon)[0]:<7}{average_stats_calculate(pokemon)[1]:<6}{average_stats_calculate(pokemon)[2]:<7}{average_stats_calculate(pokemon)[3]:<5}{average_stats_calculate(pokemon)[4]:<8}{average_stats_calculate(pokemon)[5]:<8}{average_stats_calculate(pokemon)[6]:<10}{average_stats_calculate(pokemon)[7]:<8}{average_stats_calculate(pokemon)[8]:<7}{average_stats_calculate(pokemon)[9]:<10}{average_stats_calculate(pokemon)[10]:<9}{average_stats_calculate(pokemon)[11]:<6}{average_stats_calculate(pokemon)[12]:<7}{average_stats_calculate(pokemon)[13]:<8}{average_stats_calculate(pokemon)[14]:<6}{average_stats_calculate(pokemon)[15]:<5}{average_stats_calculate(pokemon)[16]}')
+
+def average_stats_calculate(pokemon):
+    with open (r"E:\1850\课业\1.5\pokemon.csv","r", encoding='utf-8') as infile:
+        lines = infile.readlines()[1:]
+        empty_list = []
+        list = []
+        counter = 0
+        for i in range(1,18):
+            for line in lines:
+                split = line.strip().split(",")
+                type_1 = split[2]
+                type_2 = split[3]
+                split[10] = int(split[10])
+                if type_1 == tes_of_pokemon[i] or type_2 == tes_of_pokemon[i]:
+                    empty_list.append(split[10])
+                    counter += 1
+                total_data = round(sum(empty_list) / counter)
+            list.append(total_data)
+    return list
+
+print(f'Speed         {average_stats_calculate(pokemon)[0]:<7}{average_stats_calculate(pokemon)[1]:<6}{average_stats_calculate(pokemon)[2]:<7}{average_stats_calculate(pokemon)[3]:<5}{average_stats_calculate(pokemon)[4]:<8}{average_stats_calculate(pokemon)[5]:<8}{average_stats_calculate(pokemon)[6]:<10}{average_stats_calculate(pokemon)[7]:<8}{average_stats_calculate(pokemon)[8]:<7}{average_stats_calculate(pokemon)[9]:<10}{average_stats_calculate(pokemon)[10]:<9}{average_stats_calculate(pokemon)[11]:<6}{average_stats_calculate(pokemon)[12]:<7}{average_stats_calculate(pokemon)[13]:<8}{average_stats_calculate(pokemon)[14]:<6}{average_stats_calculate(pokemon)[15]:<5}{average_stats_calculate(pokemon)[16]}')
