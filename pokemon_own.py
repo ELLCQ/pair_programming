@@ -45,6 +45,7 @@ def average_stats_calculate(pokemon):
                     empty_list.append(split[4])
                     counter += 1
                 total_data = sum(empty_list) / counter
+                total_data = round(total_data, 2)
             list.append(total_data)
     return list
 
@@ -52,3 +53,4 @@ pokemon = input('test: ')
 print(average_stats_calculate(pokemon))
 
 #finally it works, this module givs exactlly 17 data outputs in a list and the data looks meaningful
+#I've just added "total_data = round(total_data, 2)" to the code so the values are nicer
