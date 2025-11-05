@@ -1,0 +1,36 @@
+Path A: Statistical Analysis (Recommended for beginners)
+Time: 3-4 hours | Difficulty: ⭐⭐⭐
+
+Core Features:
+
+Load and display Pokemon data with proper type conversion
+Calculate average stats by Pokemon type
+Find strongest Pokemon in each stat category
+Compare stats between generations
+Generate type effectiveness insights
+Learning Focus: Data processing, statistical calculations, filtering
+
+design:
+import random
+create useful dictionaries/lists
+define necessary functions
+introduction to the program for the user
+direct the user to different functions based on what they want to do
+
+
+functions to implement:
+load pokemon @@@@@
+search pokemon and display it's stats @@@
+average stats by pokemon type @@@@@
+Strongest pokemon in each stat category 
+compare average stats of each generation @@@@
+generate type effectiveness insights?
+display menu - Can only be finished when all other functions completed
+
+nice to haves:
+randomise option on pokemon search @@@@ 
+load weakest pokemon in each stat category
+compare strongest of each generation
+ask if the user knows types and tell them if they don't - menu option
+
+
