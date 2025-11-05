@@ -1,3 +1,5 @@
 #Started new functions that are needed for the project
 
 *you better share your idea before create 4 new code, that's a dramatic change and I won't promise the module I write can fit your code as all of my work based on pokemon_alter.py
+
+#I'm sorry about that, I think our initial approach was a little hasty, we should have made a better plan together from the start including thinking about the overall structure we need to create. The problem with our original idea is that we have to keep opening the csv file any time we need to do anything. I think a better method is to load the data into a list one time and manipulate it from there. I've coded those functions with that in mind. The modular nature of the functons means it shouldn't be too much of an issue. We can merge the approaches into one program and it'll still work. I'll share some notes that I've been using to work on this project.
