@@ -33,4 +33,9 @@ load weakest pokemon in each stat category
 compare strongest of each generation
 ask if the user knows types and tell them if they don't - menu option
 
+#anything below are edited by ELLCQ
+#extra ideas are not in task requirements, I'm afraid there are not too much I can help; 
+#no objection to <menu.py> if it compatible to mudulus, and can be integrated with mudulus;
+#Request: explanation of <pokemonsearch.py>, as it's function can be included in <pokemonload.py>, were you trying to create a "clean list" #which only contains the data you may use?
+#stats_compare_module will be uploaded once completed
 
