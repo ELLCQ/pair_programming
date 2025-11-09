@@ -41,3 +41,6 @@ ask if the user knows types and tell them if they don't - menu option
 
 #replying to your notes above, the extra ideas are just to show off anyway if I can bother to implement them,
 #Yeah, I needed to seperate the load and search functions because other functions such as 'comparing stats between generations' require a clean list from the load function and adding the search to it would just cause problems.
+
+#uploaded a mostly complete python file, feel free to run it, should work as long as it's with the csv file.
+
