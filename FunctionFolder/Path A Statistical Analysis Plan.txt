@@ -39,3 +39,5 @@ ask if the user knows types and tell them if they don't - menu option
 #Request: explanation of <pokemonsearch.py>, as it's function can be included in <pokemonload.py>, were you trying to create a "clean list" #which only contains the data you may use?
 #stats_compare_module will be uploaded once completed
 
+#replying to your notes above, the extra ideas are just to show off anyway if I can bother to implement them,
+#Yeah, I needed to seperate the load and search functions because other functions such as 'comparing stats between generations' require a clean list from the load function and adding the search to it would just cause problems.
